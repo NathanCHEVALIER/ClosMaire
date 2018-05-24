@@ -1,0 +1,47 @@
+allow from all
+
+DirectoryIndex controller.php?page=accueil
+
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteRule ^formations/(.+)$ controller.php?page=formations&categorie=$1 [L]
+RewriteRule ^formations/(.+)/$ controller.php?page=formations&categorie=$1 [L]
+
+RewriteRule ^etablissement$ controller.php?page=etablissement [L]
+RewriteRule ^etablissement/$ controller.php?page=etablissement [L]
+
+RewriteRule ^articles$ controller.php?page=articles [L]
+RewriteRule ^articles/$ controller.php?page=articles [L]
+
+RewriteRule ^mentions-legales$ controller.php?page=mentions [L]
+
+RewriteRule ^articles/(.+)/([0-9]+)-(.+)$ controller.php?page=articles&categorie=$1&id=$2 [L]
+RewriteRule ^articles/(.+)/([0-9]+)-(.+)/$ controller.php?page=articles&categorie=$1&id=$2 [L]
+
+RewriteRule ^articles/(.+)/$ controller.php?page=articles&categorie=$1 [L]
+RewriteRule ^articles/(.+)$ controller.php?page=articles&categorie=$1 [L]
+
+RewriteRule ^admin$ admin/controller.php?inf=login [L]
+RewriteRule ^admin/$ admin/controller.php?inf=login [L]
+
+RewriteRule ^admin/article$ admin/controller.php?inf=article [L]
+RewriteRule ^admin/article/$ admin/controller.php?inf=article [L]
+
+RewriteRule ^admin/user$ admin/controller.php?inf=user [L]
+RewriteRule ^admin/user/$ admin/controller.php?inf=user [L]
+
+RewriteRule ^admin/slider$ admin/controller.php?inf=slider [L]
+RewriteRule ^admin/slider/$ admin/controller.php?inf=slider [L]
+
+RewriteRule ^admin/contenu$ admin/controller.php?inf=contenu [L]
+RewriteRule ^admin/contenu/$ admin/controller.php?inf=contenu [L]
+
+RewriteRule ^admin/files$ admin/controller.php?inf=files [L]
+RewriteRule ^admin/files/$ admin/controller.php?inf=files [L]
+
+RewriteRule ^admin/deco$ admin/enter.php [L]
+RewriteRule ^admin/deco/$ admin/enter.php [L]
+
+RewriteRule ^admin/connexion$ admin/enter.php [L]
+RewriteRule ^admin/connexion/$ admin/enter.php [L]
